@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="script.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Flask App</title>
+    <title>Your Shopping App</title>
     <style>
         .container {
             display: flex;
@@ -22,30 +21,113 @@
 
         .window {
             width: 200px;
-            height: 100px;
+            height: 200px;
             border: 1px solid #000;
             margin: 10px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             cursor: pointer; /* Makes the window clickable */
+        }
+
+        .window img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .add-to-cart-button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        #cart {
+            width: 300px;
+            border: 1px solid #000;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        #cart-item {
+            margin-bottom: 5px;
+        }
+
+        #continue-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
 <div class="container">
     <div class="row">
-        <div class="window" id="window1" onclick="addItem('your_image1.jpg', 10)">
+        <div class="window" id="window1" onclick="addItem('your_image1.jpg', 'Product 1', 10)">
             <img src="your_image1.jpg" alt="Image 1">
-            <p>Window 1</p>
+            <p>Product 1</p>
+            <form action="/add_to_cart" method="post">
+                <input type="hidden" name="image_url" value="your_image1.jpg">
+                <input type="hidden" name="product_name" value="Product 1">
+                <button class="add-to-cart-button">Add to Cart</button>
+            </form>
         </div>
-        <!-- Остальные окна товаров -->
-        <div class="window" id="window7" onclick="showSelectedItem()">
-            <p>Show Selected Item</p>
+        <div class="window" id="window2" onclick="addItem('your_image2.jpg', 'Product 2', 15)">
+            <img src="your_image2.jpg" alt="Image 2">
+            <p>Product 2</p>
+            <form action="/add_to_cart" method="post">
+                <input type="hidden" name="image_url" value="your_image2.jpg">
+                <input type="hidden" name="product_name" value="Product 2">
+                <button class="add-to-cart-button">Add to Cart</button>
+            </form>
         </div>
+        <!-- Add more windows for other products -->
     </div>
-    <!-- Остальные ряды с окнами товаров -->
+    <!-- Add more rows with product windows -->
+
+    <div id="cart">
+        <h2>Cart</h2>
+        <div id="cart-items"></div>
+    </div>
+
+    <button id="continue-button" onclick="continueToCheckout()">Continue</button>
 </div>
+
+<script>
+    function addItem(imageSrc, productName, price) {
+        // Here you can perform actions when a window is clicked, such as showing details or adding to cart
+        // For now, let's just alert the details
+        alert("You clicked on " + productName);
+
+        // Добавляем товар в корзину
+        addToCart(productName);
+    }
+
+    function addToCart(productName) {
+        // Находим контейнер для товаров в корзине
+        var cartItemsContainer = document.getElementById("cart-items");
+
+        // Создаем новый элемент списка для добавленного товара
+        var cartItem = document.createElement("div");
+        cartItem.textContent = productName;
+        cartItem.id = "cart-item";
+
+        // Добавляем новый элемент в контейнер для товаров в корзине
+        cartItemsContainer.appendChild(cartItem);
+    }
+
+    function continueToCheckout() {
+        // Здесь вы можете перенаправить пользователя на страницу оформления заказа
+        alert("Redirecting to checkout page...");
+        // Пример перенаправления на страницу с покупками
+        window.location.href = "/checkout";
+    }
+</script>
 </body>
 </html>
-
