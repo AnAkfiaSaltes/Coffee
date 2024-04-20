@@ -1,14 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="script.js"></script>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Flask App</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .window {
+            width: 200px;
+            height: 100px;
+            border: 1px solid #000;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer; /* Makes the window clickable */
+        }
+    </style>
 </head>
 <body>
-      <h1>Main street</h1>
-
+<div class="container">
+    <div class="row">
+        <div class="window" id="window1" onclick="addItem('your_image1.jpg', 10)">
+            <img src="your_image1.jpg" alt="Image 1">
+            <p>Window 1</p>
+        </div>
+        <!-- Остальные окна товаров -->
+        <div class="window" id="window7" onclick="showSelectedItem()">
+            <p>Show Selected Item</p>
+        </div>
+    </div>
+    <!-- Остальные ряды с окнами товаров -->
+</div>
 </body>
 </html>
+
