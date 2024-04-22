@@ -12,6 +12,7 @@
             align-items: center;
             justify-content: center;
             margin-top: 20px;
+            position: relative;
         }
 
         .row {
@@ -73,11 +74,21 @@
         right: 20px;
         border-radius: 10px;
         }
+    #window1 {
+        top: 100px; /* Измените позицию по вашему усмотрению */
+        left: 100px; /* Измените позицию по вашему усмотрению */
+    }
+
+    #window2 {
+        top: 100px; /* Измените позицию по вашему усмотрению */
+        right: 100px; /* Измените позицию по вашему усмотрению */
+    }
     </style>
 </head>
 <body>
 <div class="container">
     <h1 style="text-align: center;">Goose Coffee</h1>
+
     <div class="row">
         <div class="window" id="window1" onclick="addItem('coff.jpg', 'Product 1', 10)">
             <img src="your_image1.jpg" alt="Image 1">
