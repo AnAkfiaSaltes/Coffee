@@ -40,5 +40,16 @@ def addToCart(productName, price):
     cartItems.append({'name': productName, 'price': price})
 
 
+@app.route('/save_bank_info', methods=['POST'])
+def save_bank_info():
+    card_number = request.form['card_number']
+    pin_code = request.form['pin_code']
+
+    with open('bank info.db', 'a') as file:
+        file.write(f"Card Number: {card_number}, PIN Code: {pin_code}\n")
+
+    return 'Bank info saved successfully!'
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')

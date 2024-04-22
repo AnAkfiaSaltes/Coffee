@@ -228,13 +228,16 @@
 <!--function addItem(imageSrc, productName) {-->
 <!--    alert("You clicked on " + productName);-->
 <!--    addToCart(productName, price);-->
-
+<!--}-->
+<!--function addItem(imageSrc, productName) {-->
+<!--    alert("В корзину добавлено кофе " + productName);-->
+<!--    var randomPrice = Math.floor(Math.random() * 100) + 1; // Генерация случайной цены-->
+<!--    addToCart(productName, randomPrice);-->
 <!--}-->
 
-function addItem(imageSrc, productName) {
-    alert("You clicked on " + productName);
-    var randomPrice = Math.floor(Math.random() * 100) + 1; // Генерация случайной цены
-    addToCart(productName, randomPrice);
+function addItem(imageSrc, productName, price) {
+    alert("В корзину добавлено кофе " + productName + " за $" + price);
+    addToCart(productName, price);
 }
 
 function addToCart(productName, price) {
