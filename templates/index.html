@@ -12,7 +12,6 @@
             align-items: center;
             justify-content: center;
             margin-top: 20px;
-            position: relative;
         }
 
         .row {
@@ -74,37 +73,27 @@
         right: 20px;
         border-radius: 10px;
         }
-    #window1 {
-        top: 100px; /* Измените позицию по вашему усмотрению */
-        left: 100px; /* Измените позицию по вашему усмотрению */
-    }
-
-    #window2 {
-        top: 100px; /* Измените позицию по вашему усмотрению */
-        right: 100px; /* Измените позицию по вашему усмотрению */
-    }
     </style>
 </head>
 <body>
 <div class="container">
     <h1 style="text-align: center;">Goose Coffee</h1>
-
     <div class="row">
-        <div class="window" id="window1" onclick="addItem('coff.jpg', 'Product 1', 10)">
-            <img src="your_image1.jpg" alt="Image 1">
+        <div class="window" id="window1" onclick="addItem('американо.jpg', 'Product 1', 10)">
+            <img src="американо.jpg" alt="Image 1">
             <p>Американо</p>
             <form action="/add_to_cart" method="post">
-                <input type="hidden" name="image_url" value="coff.jpg">
+                <input type="hidden" name="image_url" value="американо.jpg">
                 <input type="hidden" name="product_name" value="Product 1">
                 <button class="add-to-cart-button">Add to Cart</button>
             </form>
         </div>
-        <div class="window" id="window2" onclick="addItem('your_image2.jpg', 'Product 2', 15)">
-            <img src="your_image2.jpg" alt="Image 2">
-            <p>Product 2</p>
+        <div class="window" id="window2" onclick="addItem('капучино.jpg', 'капучино', 15)">
+            <img src="капучино.jpg" alt="Image 2">
+            <p>капучино</p>
             <form action="/add_to_cart" method="post">
-                <input type="hidden" name="image_url" value="your_image2.jpg">
-                <input type="hidden" name="product_name" value="Product 2">
+                <input type="hidden" name="image_url" value="капучино.jpg">
+                <input type="hidden" name="product_name" value="капучино">
                 <button class="add-to-cart-button">Add to Cart</button>
             </form>
         </div>
@@ -112,42 +101,42 @@
     </div>
 
     <div class="row">
-        <div class="window" id="window3" onclick="addItem('your_image3.jpg', 'Product 3', 20)">
-            <img src="your_image3.jpg" alt="Image 3">
-            <p>Product 3</p>
+        <div class="window" id="window3" onclick="addItem('кортадо.jpg', 'кортадо', 20)">
+            <img src="кортадо.jpg" alt="Image 3">
+            <p>кортадо</p>
             <form action="/add_to_cart" method="post">
-                <input type="hidden" name="image_url" value="your_image3.jpg">
-                <input type="hidden" name="product_name" value="Product 3">
+                <input type="hidden" name="image_url" value="кортадо.jpg">
+                <input type="hidden" name="product_name" value="кортадо">
                 <button class="add-to-cart-button">Add to Cart</button>
             </form>
         </div>
-        <div class="window" id="window4" onclick="addItem('your_image4.jpg', 'Product 4', 25)">
-            <img src="your_image4.jpg" alt="Image 4">
-            <p>Product 4</p>
+        <div class="window" id="window4" onclick="addItem('латте.gif', 'латте', 25)">
+            <img src="латте.gif" alt="Image 4">
+            <p>латте</p>
             <form action="/add_to_cart" method="post">
-                <input type="hidden" name="image_url" value="your_image4.jpg">
-                <input type="hidden" name="product_name" value="Product 4">
+                <input type="hidden" name="image_url" value="латте.gif">
+                <input type="hidden" name="product_name" value="латте">
                 <button class="add-to-cart-button">Add to Cart</button>
             </form>
         </div>
     </div>
 
     <div class="row">
-        <div class="window" id="window5" onclick="addItem('your_image5.jpg', 'Product 5', 30)">
-            <img src="your_image5.jpg" alt="Image 5">
-            <p>Product 5</p>
+        <div class="window" id="window5" onclick="addItem('мокачино.png', 'мокачино', 30)">
+            <img src="мокачино.png" alt="Image 5">
+            <p>мокачино</p>
             <form action="/add_to_cart" method="post">
-                <input type="hidden" name="image_url" value="your_image5.jpg">
-                <input type="hidden" name="product_name" value="Product 5">
+                <input type="hidden" name="image_url" value="мокачино.png">
+                <input type="hidden" name="product_name" value="мокачино">
                 <button class="add-to-cart-button">Add to Cart</button>
             </form>
         </div>
-        <div class="window" id="window6" onclick="addItem('your_image6.jpg', 'Product 6', 35)">
-            <img src="your_image6.jpg" alt="Image 6">
-            <p>Product 6</p>
+        <div class="window" id="window6" onclick="addItem('раф.jpg', 'раф', 35)">
+            <img src="раф.jpg" alt="Image 6">
+            <p>раф</p>
             <form action="/add_to_cart" method="post">
-                <input type="hidden" name="image_url" value="your_image6.jpg">
-                <input type="hidden" name="product_name" value="Product 6">
+                <input type="hidden" name="image_url" value="раф.jpg">
+                <input type="hidden" name="product_name" value="раф">
                 <button class="add-to-cart-button">Add to Cart</button>
             </form>
         </div>
@@ -155,21 +144,21 @@
 
 
     <div class="row">
-        <div class="window" id="window7" onclick="addItem('your_image7.jpg', 'Product 7', 40)">
-            <img src="your_image7.jpg" alt="Image 7">
-            <p>Product 7</p>
+        <div class="window" id="window7" onclick="addItem('ритсретто.jpg', 'ритсретто', 40)">
+            <img src="ритсретто.jpg" alt="Image 7">
+            <p>ритсретто</p>
             <form action="/add_to_cart" method="post">
-                <input type="hidden" name="image_url" value="your_image7.jpg">
-                <input type="hidden" name="product_name" value="Product 7">
+                <input type="hidden" name="image_url" value="ритсретто.jpg">
+                <input type="hidden" name="product_name" value="ритсретто">
                 <button class="add-to-cart-button">Add to Cart</button>
             </form>
         </div>
-        <div class="window" id="window8" onclick="addItem('your_image8.jpg', 'Product 8', 45)">
-            <img src="your_image8.jpg" alt="Image 8">
-            <p>Product 8</p>
+        <div class="window" id="window8" onclick="addItem('флет уайт.jpg', 'м', 45)">
+            <img src="флет уайт.jpg" alt="Image 8">
+            <p>флет уайт</p>
             <form action="/add_to_cart" method="post">
-                <input type="hidden" name="image_url" value="your_image8.jpg">
-                <input type="hidden" name="product_name" value="Product 8">
+                <input type="hidden" name="image_url" value="флет уайт.jpg">
+                <input type="hidden" name="product_name" value="флет уайт">
                 <button class="add-to-cart-button">Add to Cart</button>
             </form>
         </div>
@@ -221,6 +210,10 @@ function renderCart() {
     cartItemsContainer.appendChild(totalElement);
 }
 </script>
+</body>
+</html>
+
+
 </body>
 </html>
 
