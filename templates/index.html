@@ -165,52 +165,23 @@
         <div id="cart-items"></div>
     </div>
 
-    <button id="continue-button" onclick="continueToCheckout()">Continue</button>
+    <button id="continue-button" onclick="continueToCheckout()">Buy</button>
 </div>
-
-<!--<script>-->
-<!--    function addItem(imageSrc, productName, price) {-->
-<!--        // Here you can perform actions when a window is clicked, such as showing details or adding to cart-->
-<!--        // For now, let's just alert the details-->
-<!--        alert("You clicked on " + productName);-->
-
-<!--        // Добавляем товар в корзину-->
-<!--        addToCart(productName);-->
-<!--    }-->
-
-<!--    function addToCart(productName) {-->
-<!--        // Находим контейнер для товаров в корзине-->
-<!--        var cartItemsContainer = document.getElementById("cart-items");-->
-
-<!--        // Создаем новый элемент списка для добавленного товара-->
-<!--        var cartItem = document.createElement("div");-->
-<!--        cartItem.textContent = productName;-->
-<!--        cartItem.id = "cart-item";-->
-
-<!--        // Добавляем новый элемент в контейнер для товаров в корзине-->
-<!--        cartItemsContainer.appendChild(cartItem);-->
-<!--    }-->
-
-<!--    function continueToCheckout() {-->
-<!--        // Здесь вы можете перенаправить пользователя на страницу оформления заказа-->
-<!--        alert("Redirecting to checkout page...");-->
-<!--        // Пример перенаправления на страницу с покупками-->
-<!--        window.location.href = "/checkout";-->
-<!--    }-->
-<!--</script>-->
 
 <script>
     var cartItems = [];
 
+<!--function addItem(imageSrc, productName) {-->
+<!--    alert("You clicked on " + productName);-->
+<!--    addToCart(productName, price);-->
+
+<!--}-->
+
 function addItem(imageSrc, productName) {
     alert("You clicked on " + productName);
-    addToCart(productName, price);
-
+    var randomPrice = Math.floor(Math.random() * 100) + 1; // Генерация случайной цены
+    addToCart(productName, randomPrice);
 }
-
-<!--function getProductPrice(productName) {-->
-<!--    return Math.floor(Math.random() * 100) + 1; -->
-<!--}-->
 
 function addToCart(productName, price) {
     cartItems.push({ name: productName, price: price });
