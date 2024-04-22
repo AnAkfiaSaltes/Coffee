@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Shopping App</title>
+    <title>Goose Coffee</title>
     <style>
         .container {
             display: flex;
@@ -23,12 +23,13 @@
             width: 300px;
             height: 200px;
             border: 1px solid #000;
-            margin: 10px;
+            margin: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             cursor: pointer; /* Makes the window clickable */
+            border-radius: 10px;
         }
 
         .window img {
@@ -52,6 +53,8 @@
         width: 300px;
         border: 1px solid #000;
         padding: 10px;
+        border-radius: 10px;
+
         }
 
             #cart-items {
@@ -68,12 +71,13 @@
         position: fixed;
         bottom: 20px;
         right: 20px;
+        border-radius: 10px;
         }
     </style>
 </head>
 <body>
 <div class="container">
-
+    <h1 style="text-align: center;">Goose Coffee</h1>
     <div class="row">
         <div class="window" id="window1" onclick="addItem('coff.jpg', 'Product 1', 10)">
             <img src="your_image1.jpg" alt="Image 1">
