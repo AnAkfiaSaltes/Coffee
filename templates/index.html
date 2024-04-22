@@ -30,6 +30,19 @@
             justify-content: center;
             cursor: pointer; /* Makes the window clickable */
             border-radius: 10px;
+            position: relative;
+        }
+        .window p {
+            position: absolute; /* Добавляем абсолютное позиционирование для названия */
+            bottom: 0; /* Помещаем название внизу */
+            right: 0; /* Помещаем название справа */
+            margin: 0; /* Убираем отступы */
+            padding: 10px; /* Добавляем отступы для улучшения визуального вида */
+            background-color: rgba(255, 255, 255, 0.7); /* Добавляем непрозрачный фон для лучшей читаемости */
+        }
+
+        .window form {
+            margin-bottom: 30px; /* Добавляем отступ между названием и кнопкой "Add to Cart" */
         }
 
         .window img {
@@ -73,23 +86,54 @@
         right: 20px;
         border-radius: 10px;
         }
+        .modal {
+          display: none;
+          position: fixed;
+          z-index: 1;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+          background-color: #fefefe;
+          margin: 15% auto;
+          padding: 20px;
+          border: 1px solid #888;
+          width: 80%;
+        }
+
+        .close {
+          color: #aaaaaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
     </style>
 </head>
 <body>
 <div class="container">
     <h1 style="text-align: center;">Goose Coffee</h1>
     <div class="row">
-        <div class="window" id="window1" onclick="addItem('американо.jpg', 'Product 1', 10)">
-            <img src="американо.jpg" alt="Image 1">
-            <p>Американо</p>
-            <form action="/add_to_cart" method="post">
-                <input type="hidden" name="image_url" value="американо.jpg">
-                <input type="hidden" name="product_name" value="Product 1">
-                <button class="add-to-cart-button">Add to Cart</button>
-            </form>
+        <div class="row">
+            <div class="window" id="window1" onclick="addItem('американо.jpg', 'Product 1', 10)" style="background-image: url('американо.jpg');">
+                <p>Американо</p>
+                <form action="/add_to_cart" method="post">
+                    <input type="hidden" name="image_url" value="американо.jpg">
+                    <input type="hidden" name="product_name" value="Product 1">
+                    <button class="add-to-cart-button">Add to Cart</button>
+                </form>
+            </div>
         </div>
-        <div class="window" id="window2" onclick="addItem('капучино.jpg', 'капучино', 15)">
-            <img src="капучино.jpg" alt="Image 2">
+        <div class="window" id="window2" onclick="addItem('капучино.jpg', 'капучино', 15)" style="background-image: url('капучино.jpg');">
             <p>капучино</p>
             <form action="/add_to_cart" method="post">
                 <input type="hidden" name="image_url" value="капучино.jpg">
@@ -101,8 +145,7 @@
     </div>
 
     <div class="row">
-        <div class="window" id="window3" onclick="addItem('кортадо.jpg', 'кортадо', 20)">
-            <img src="кортадо.jpg" alt="Image 3">
+        <div class="window" id="window3" onclick="addItem('кортадо.jpg', 'кортадо', 20)" style="background-image: url('кортадо.jpg');">
             <p>кортадо</p>
             <form action="/add_to_cart" method="post">
                 <input type="hidden" name="image_url" value="кортадо.jpg">
@@ -110,8 +153,7 @@
                 <button class="add-to-cart-button">Add to Cart</button>
             </form>
         </div>
-        <div class="window" id="window4" onclick="addItem('латте.gif', 'латте', 25)">
-            <img src="латте.gif" alt="Image 4">
+        <div class="window" id="window4" onclick="addItem('латте.gif', 'латте', 25)" style="background-image: url('латте.gif');">
             <p>латте</p>
             <form action="/add_to_cart" method="post">
                 <input type="hidden" name="image_url" value="латте.gif">
@@ -122,8 +164,7 @@
     </div>
 
     <div class="row">
-        <div class="window" id="window5" onclick="addItem('мокачино.png', 'мокачино', 30)">
-            <img src="мокачино.png" alt="Image 5">
+        <div class="window" id="window5" onclick="addItem('мокачино.png', 'мокачино', 30)" style="background-image: url('мокачино.png');">
             <p>мокачино</p>
             <form action="/add_to_cart" method="post">
                 <input type="hidden" name="image_url" value="мокачино.png">
@@ -131,8 +172,7 @@
                 <button class="add-to-cart-button">Add to Cart</button>
             </form>
         </div>
-        <div class="window" id="window6" onclick="addItem('раф.jpg', 'раф', 35)">
-            <img src="раф.jpg" alt="Image 6">
+        <div class="window" id="window6" onclick="addItem('раф.jpg', 'раф', 35)" style="background-image: url('раф.jpg');">
             <p>раф</p>
             <form action="/add_to_cart" method="post">
                 <input type="hidden" name="image_url" value="раф.jpg">
@@ -144,8 +184,7 @@
 
 
     <div class="row">
-        <div class="window" id="window7" onclick="addItem('ритсретто.jpg', 'ритсретто', 40)">
-            <img src="ритсретто.jpg" alt="Image 7">
+        <div class="window" id="window7" onclick="addItem('ритсретто.jpg', 'ритсретто', 40)" style="background-image: url('ритсретто.jpg');">
             <p>ритсретто</p>
             <form action="/add_to_cart" method="post">
                 <input type="hidden" name="image_url" value="ритсретто.jpg">
@@ -153,8 +192,7 @@
                 <button class="add-to-cart-button">Add to Cart</button>
             </form>
         </div>
-        <div class="window" id="window8" onclick="addItem('флет уайт.jpg', 'м', 45)">
-            <img src="флет уайт.jpg" alt="Image 8">
+        <div class="window" id="window8" onclick="addItem('флет уайт.jpg', 'флет уайт', 45)" style="background-image: url('флет уайт.jpg');">
             <p>флет уайт</p>
             <form action="/add_to_cart" method="post">
                 <input type="hidden" name="image_url" value="флет уайт.jpg">
@@ -171,7 +209,16 @@
 
     <button id="continue-button" onclick="continueToCheckout()">Buy</button>
 </div>
-
+<div id="checkout-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Thank you for your purchase!</p>
+        <p>Your order total is: <span id="total-price"></span></p>
+        <input type="text" id="card-number" placeholder="Enter card number (16 digits)">
+        <input type="password" id="pin-code" placeholder="Enter PIN code">
+        <button id="confirm-button">Confirm</button>
+    </div>
+</div>
 <script>
     var cartItems = [];
 
@@ -209,11 +256,51 @@ function renderCart() {
     totalElement.textContent = "Total: $" + total;
     cartItemsContainer.appendChild(totalElement);
 }
+var modal = document.getElementById("checkout-modal");
+var closeButton = document.getElementsByClassName("close")[0];
+var confirmButton = document.getElementById("confirm-button");
+var totalPriceElement = document.getElementById("total-price");
+
+function openModal(totalPrice) {
+  modal.style.display = "block";
+  totalPriceElement.textContent = "$" + totalPrice;
+}
+
+closeButton.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+document.getElementById("continue-button").addEventListener("click", function() {
+  var total = 0;
+  for (var i = 0; i < cartItems.length; i++) {
+    total += cartItems[i].price;
+  }
+  openModal(total);
+});
+
+confirmButton.addEventListener("click", function() {
+    var cardNumber = document.getElementById("card-number").value;
+    var pinCode = document.getElementById("pin-code").value;
+
+    if (cardNumber.length !== 16 || pinCode.length === 0) {
+        alert("Please enter valid card number and PIN code.");
+        return;
+    }
+
+    alert("Спасибо за покупку");
+
+    cartItems = [];
+    renderCart();
+
+    modal.style.display = "none";
+});
 </script>
-</body>
-</html>
-
-
 </body>
 </html>
 
