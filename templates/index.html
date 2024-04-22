@@ -20,7 +20,7 @@
         }
 
         .window {
-            width: 200px;
+            width: 300px;
             height: 200px;
             border: 1px solid #000;
             margin: 10px;
@@ -45,35 +45,41 @@
             cursor: pointer;
         }
 
-        #cart {
-            width: 300px;
-            border: 1px solid #000;
-            padding: 10px;
-            margin-top: 20px;
+           #cart {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 300px;
+        border: 1px solid #000;
+        padding: 10px;
         }
 
-        #cart-item {
-            margin-bottom: 5px;
+            #cart-items {
+        margin-bottom: 10px;
         }
 
-        #continue-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: #fff;
-            border: none;
-            cursor: pointer;
+    #continue-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
         }
     </style>
 </head>
 <body>
 <div class="container">
+
     <div class="row">
-        <div class="window" id="window1" onclick="addItem('your_image1.jpg', 'Product 1', 10)">
+        <div class="window" id="window1" onclick="addItem('coff.jpg', 'Product 1', 10)">
             <img src="your_image1.jpg" alt="Image 1">
-            <p>Product 1</p>
+            <p>Американо</p>
             <form action="/add_to_cart" method="post">
-                <input type="hidden" name="image_url" value="your_image1.jpg">
+                <input type="hidden" name="image_url" value="coff.jpg">
                 <input type="hidden" name="product_name" value="Product 1">
                 <button class="add-to-cart-button">Add to Cart</button>
             </form>
@@ -87,9 +93,72 @@
                 <button class="add-to-cart-button">Add to Cart</button>
             </form>
         </div>
-        <!-- Add more windows for other products -->
+
     </div>
-    <!-- Add more rows with product windows -->
+
+    <div class="row">
+        <div class="window" id="window3" onclick="addItem('your_image3.jpg', 'Product 3', 20)">
+            <img src="your_image3.jpg" alt="Image 3">
+            <p>Product 3</p>
+            <form action="/add_to_cart" method="post">
+                <input type="hidden" name="image_url" value="your_image3.jpg">
+                <input type="hidden" name="product_name" value="Product 3">
+                <button class="add-to-cart-button">Add to Cart</button>
+            </form>
+        </div>
+        <div class="window" id="window4" onclick="addItem('your_image4.jpg', 'Product 4', 25)">
+            <img src="your_image4.jpg" alt="Image 4">
+            <p>Product 4</p>
+            <form action="/add_to_cart" method="post">
+                <input type="hidden" name="image_url" value="your_image4.jpg">
+                <input type="hidden" name="product_name" value="Product 4">
+                <button class="add-to-cart-button">Add to Cart</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="window" id="window5" onclick="addItem('your_image5.jpg', 'Product 5', 30)">
+            <img src="your_image5.jpg" alt="Image 5">
+            <p>Product 5</p>
+            <form action="/add_to_cart" method="post">
+                <input type="hidden" name="image_url" value="your_image5.jpg">
+                <input type="hidden" name="product_name" value="Product 5">
+                <button class="add-to-cart-button">Add to Cart</button>
+            </form>
+        </div>
+        <div class="window" id="window6" onclick="addItem('your_image6.jpg', 'Product 6', 35)">
+            <img src="your_image6.jpg" alt="Image 6">
+            <p>Product 6</p>
+            <form action="/add_to_cart" method="post">
+                <input type="hidden" name="image_url" value="your_image6.jpg">
+                <input type="hidden" name="product_name" value="Product 6">
+                <button class="add-to-cart-button">Add to Cart</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="window" id="window7" onclick="addItem('your_image7.jpg', 'Product 7', 40)">
+            <img src="your_image7.jpg" alt="Image 7">
+            <p>Product 7</p>
+            <form action="/add_to_cart" method="post">
+                <input type="hidden" name="image_url" value="your_image7.jpg">
+                <input type="hidden" name="product_name" value="Product 7">
+                <button class="add-to-cart-button">Add to Cart</button>
+            </form>
+        </div>
+        <div class="window" id="window8" onclick="addItem('your_image8.jpg', 'Product 8', 45)">
+            <img src="your_image8.jpg" alt="Image 8">
+            <p>Product 8</p>
+            <form action="/add_to_cart" method="post">
+                <input type="hidden" name="image_url" value="your_image8.jpg">
+                <input type="hidden" name="product_name" value="Product 8">
+                <button class="add-to-cart-button">Add to Cart</button>
+            </form>
+        </div>
+    </div>
 
     <div id="cart">
         <h2>Cart</h2>
@@ -99,35 +168,73 @@
     <button id="continue-button" onclick="continueToCheckout()">Continue</button>
 </div>
 
+<!--<script>-->
+<!--    function addItem(imageSrc, productName, price) {-->
+<!--        // Here you can perform actions when a window is clicked, such as showing details or adding to cart-->
+<!--        // For now, let's just alert the details-->
+<!--        alert("You clicked on " + productName);-->
+
+<!--        // Добавляем товар в корзину-->
+<!--        addToCart(productName);-->
+<!--    }-->
+
+<!--    function addToCart(productName) {-->
+<!--        // Находим контейнер для товаров в корзине-->
+<!--        var cartItemsContainer = document.getElementById("cart-items");-->
+
+<!--        // Создаем новый элемент списка для добавленного товара-->
+<!--        var cartItem = document.createElement("div");-->
+<!--        cartItem.textContent = productName;-->
+<!--        cartItem.id = "cart-item";-->
+
+<!--        // Добавляем новый элемент в контейнер для товаров в корзине-->
+<!--        cartItemsContainer.appendChild(cartItem);-->
+<!--    }-->
+
+<!--    function continueToCheckout() {-->
+<!--        // Здесь вы можете перенаправить пользователя на страницу оформления заказа-->
+<!--        alert("Redirecting to checkout page...");-->
+<!--        // Пример перенаправления на страницу с покупками-->
+<!--        window.location.href = "/checkout";-->
+<!--    }-->
+<!--</script>-->
+
 <script>
-    function addItem(imageSrc, productName, price) {
-        // Here you can perform actions when a window is clicked, such as showing details or adding to cart
-        // For now, let's just alert the details
-        alert("You clicked on " + productName);
+    var cartItems = [];
 
-        // Добавляем товар в корзину
-        addToCart(productName);
-    }
+function addItem(imageSrc, productName) {
+    alert("You clicked on " + productName);
+    addToCart(productName, price);
 
-    function addToCart(productName) {
-        // Находим контейнер для товаров в корзине
-        var cartItemsContainer = document.getElementById("cart-items");
+}
 
-        // Создаем новый элемент списка для добавленного товара
+<!--function getProductPrice(productName) {-->
+<!--    return Math.floor(Math.random() * 100) + 1; -->
+<!--}-->
+
+function addToCart(productName, price) {
+    cartItems.push({ name: productName, price: price });
+    renderCart();
+}
+
+function renderCart() {
+    var cartItemsContainer = document.getElementById("cart-items");
+    cartItemsContainer.innerHTML = "";
+
+    var total = 0;
+    for (var i = 0; i < cartItems.length; i++) {
         var cartItem = document.createElement("div");
-        cartItem.textContent = productName;
+        cartItem.textContent = cartItems[i].name + " - $" + cartItems[i].price;
         cartItem.id = "cart-item";
-
-        // Добавляем новый элемент в контейнер для товаров в корзине
         cartItemsContainer.appendChild(cartItem);
+        total += cartItems[i].price;
     }
 
-    function continueToCheckout() {
-        // Здесь вы можете перенаправить пользователя на страницу оформления заказа
-        alert("Redirecting to checkout page...");
-        // Пример перенаправления на страницу с покупками
-        window.location.href = "/checkout";
-    }
+    var totalElement = document.createElement("div");
+    totalElement.textContent = "Total: $" + total;
+    cartItemsContainer.appendChild(totalElement);
+}
 </script>
 </body>
 </html>
+
